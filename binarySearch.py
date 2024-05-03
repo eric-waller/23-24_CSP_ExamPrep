@@ -2,7 +2,18 @@
 
 
 def binarySearch(array, x, low, high):
+    if high >= low:
+        mid = low + (high-low) // 2
 
+        #if value is found
+        if array[mid] == x:
+            return mid
+        elif array[mid] > x:
+            return binarySearch(array, x, low, mid-1)
+        else:
+            return binarySearch(array, x, mid+1, high)
+    else:
+        return -2
 
 
 
